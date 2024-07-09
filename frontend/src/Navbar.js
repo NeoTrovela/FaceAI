@@ -5,17 +5,17 @@ export default function Navbar() {
         FaceAI
       </a>
       <ul>
-        <li>
-          <a href="/Upload pictures">Upload pictures</a>
+        <li className="active">
+          <a href="/Upload-Pictures">Upload pictures</a>
         </li>
         <li>
-          <a href="/Your Pictures">Your Pictures</a>
+          <a href="/Your-Pictures">Your Pictures</a>
         </li>
         <li>
           <a href="/Friends">Friends</a>
         </li>
         <li>
-          <a href="/Sign Up / Login">Sign Up / Login</a>
+          <a href="/Sign-Up-Login">Sign Up / Login</a>
         </li>
         <li>
           <a href="/Profile">Profile</a>
