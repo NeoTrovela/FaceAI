@@ -1,7 +1,8 @@
 # Python venv
+venv/
 
 # Node.js dependencies
-/node_modules
+node_modules/
 
 # Build files
 build/
