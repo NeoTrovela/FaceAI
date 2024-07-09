@@ -33,6 +33,8 @@ function App() {
     case "/Settings":
       Component = Settings;
       break;
+    default:
+      Component = () => <div>404 Not Found</div>;
   }
   return (
     <>
