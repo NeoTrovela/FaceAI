@@ -1,3 +1,3 @@
 export default function Upload() {
-  return <h1>Upload</h1>;
+  return <h1>Upload Pictures</h1>;
 }

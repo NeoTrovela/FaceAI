@@ -5,25 +5,22 @@ export default function Navbar() {
         FaceAI
       </a>
       <ul>
-        <li className="active">
-          <a href="/Upload-Pictures">Upload pictures</a>
-        </li>
-        <li>
-          <a href="/Your-Pictures">Your Pictures</a>
-        </li>
-        <li>
-          <a href="/Friends">Friends</a>
-        </li>
-        <li>
-          <a href="/Sign-Up-Login">Sign Up / Login</a>
-        </li>
-        <li>
-          <a href="/Profile">Profile</a>
-        </li>
-        <li>
-          <a href="/Settings">Settings</a>
-        </li>
+        <CustomLink href="/Upload-Pictures">Upload Pictures</CustomLink>
+        <CustomLink href="/Your-Pictures">Your Pictures</CustomLink>
+        <CustomLink href="/Friends">Friends</CustomLink>
+        <CustomLink href="/Sign-Up-Login">Sign Up / Login</CustomLink>
+        <CustomLink href="/Profile">Profile</CustomLink>
+        <CustomLink href="/Settings">Settings</CustomLink>
       </ul>
     </nav>
+  );
+}
+
+function CustomLink({ href, children, ...props }) {
+  const path = window.location.pathname;
+  return (
+    <li className={path === href ? "active" : ""}>
+      <a href={href}>{children}</a>
+    </li>
   );
 }
