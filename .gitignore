@@ -4,8 +4,11 @@
 node_modules/
 
 # Build files
-/build
+build/
 /dist
 
 # Environment variables
 .env
+
+.DS_Store
+*.log
