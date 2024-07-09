@@ -1,5 +1,6 @@
 # FaceAI
 Neo and Kamil, AI Photo sharing app
+
 Frontend: React, Javascript, HTML, CSS
 
 Backend: Python, Django
