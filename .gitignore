@@ -4,9 +4,12 @@ venv/
 # Node.js dependencies
 node_modules/
 
+.eslinecache
+
 # Build files
 build/
 /dist
+/coverage
 
 # Environment variables
 .env
