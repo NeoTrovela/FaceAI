@@ -1,4 +1,4 @@
-#!/Users/neo/Desktop/AIApp/backend/venv/bin/python3.12
+#!/Users/neo/Documents/GitHub/FaceAI/backend/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
