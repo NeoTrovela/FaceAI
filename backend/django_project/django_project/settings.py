@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "myapp",
-    "rest_framework",
-    "corsheaders",
+    # additions
+    "myapp", # our created apps
+    "rest_framework", # helps build web APIs for Django
+    "corsheaders", # cors is probelm -> diff origin tries to hit backend. This prevents it
 ]
 
 MIDDLEWARE = [
@@ -50,7 +51,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
+    # additions
+    "corsheaders.middleware.CorsMiddleware", 
 ]
 
 ROOT_URLCONF = "django_project.urls"
