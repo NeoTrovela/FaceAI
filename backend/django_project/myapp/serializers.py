@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from .models import Note
 
 # serializers -> with API, taken python object and converts to JSON data in order to commute with other apps, vice versa
 class UserSerializer(serializers.ModelSerializer):
