@@ -24,8 +24,11 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # additions
     # urls we can go to that will call a function/perform an operation
-    path("api/user/register/", CreateUserView.as_view(), name="register"), # allows to make new user, can name whatever we want
-    path("api/token/", TokenObtainPairView.as_view(), name="get_token"), # gets our token (already made, just have to link)
-    path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh"), # refreshes token
-    path("api-auth/", include("rest_framework.urls")), # includes all urls from restframework urls
+    path("myapp/user/register/", CreateUserView.as_view(), name="register"), # allows to make new user, can name whatever we want
+    path("myapp/token/", TokenObtainPairView.as_view(), name="get_token"), # gets our token (already made, just have to link)
+    path("myapp/token/refresh/", TokenRefreshView.as_view(), name="refresh"), # refreshes token
+    path("myapp-auth/", include("rest_framework.urls")), # includes all urls from restframework urls
+
+    # linking urls from this into app
+    path("myapp/", include("myapp.urls")),
 ]
