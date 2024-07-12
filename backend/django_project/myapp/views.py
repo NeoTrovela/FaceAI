@@ -31,5 +31,5 @@ def http_view(request):
 # functions to allow creation of new users
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all
-    serializer_class = User # kind of data needed to make a new user
+    serializer_class = UserSerializer # kind of data needed to make a new user
     permission_classes = [AllowAny] # allows anyone to be able to make a new user
