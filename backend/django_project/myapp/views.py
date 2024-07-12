@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 from django.contrib.auth.models import User
 from rest_framework import generics
-from .serializers import UserSerializer, NoteSerializer
+from .serializers import UserSerializer, PictSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Pict
 
@@ -30,8 +30,8 @@ def http_view(request):
 
 
 # views for creating/deleting Note
-class NoteListCreate(generics.ListCreateAPIView): # notes is part of the video project, but still have to use this ideas when adding pictures
-    serializer_class = NoteSerializer
+class PictListCreate(generics.ListCreateAPIView): # notes is part of the video project, but still have to use this ideas when adding pictures
+    serializer_class = PictSerializer
     permission_classes = [IsAuthenticated] # cant call root if authenticated and passes valid jwt token
     # list all notes created by user or created new note
 
@@ -45,8 +45,8 @@ class NoteListCreate(generics.ListCreateAPIView): # notes is part of the video p
         else:
             print(serializer.errors)
 
-class NoteDelete(generics.DestroyAPIView):
-    serializer_class = NoteSerializer
+class PictDelete(generics.DestroyAPIView):
+    serializer_class = PictSerializer
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
