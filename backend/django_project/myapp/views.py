@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from rest_framework import generics
 from .serializers import UserSerializer, NoteSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from .models import Note
+from .models import Pict
 
 
 # Create your views here.
@@ -30,14 +30,14 @@ def http_view(request):
 
 
 # views for creating/deleting Note
-class NoteListCreate(generics.ListCreateAPIView):
+class NoteListCreate(generics.ListCreateAPIView): # notes is part of the video project, but still have to use this ideas when adding pictures
     serializer_class = NoteSerializer
     permission_classes = [IsAuthenticated] # cant call root if authenticated and passes valid jwt token
     # list all notes created by user or created new note
 
     def get_queryset(self):
         user = self.request.user # gets user that is authenticated and interacting with root
-        return Note.objects.filter(author=user) # gets all Notes written by user
+        return Pict.objects.filter(author=user) # gets all Notes written by user
     
     def perform_create(self, serializer):
         if serializer.is_valid():
@@ -51,7 +51,7 @@ class NoteDelete(generics.DestroyAPIView):
 
     def get_queryset(self):
         user = self.request.user # gets user that is authenticated and interacting with root
-        return Note.objects.filter(author=user) # gets all Notes written by user
+        return Pict.objects.filter(author=user) # gets all Notes written by user
 
 
 

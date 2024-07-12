@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Note(models.Model): # Notes model
+class Pict(models.Model): # Notes model
     title = models.CharField(max_length=100) # added title
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True) # automatically populate when new instance of note is created

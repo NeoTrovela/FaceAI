@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Note
+from .models import Pict
 
 # serializers -> with API, taken python object and converts to JSON data in order to commute with other apps, vice versa
 class UserSerializer(serializers.ModelSerializer):
@@ -14,8 +14,8 @@ class UserSerializer(serializers.ModelSerializer):
 
         return user
     
-class NoteSerializer(serializers.ModelSerializer): # add serializer for Notes model
+class PictSerializer(serializers.ModelSerializer): # add serializer for Notes model
     class Meta:
-        model = Note
+        model = Pict
         fields = ['id', 'title', 'content', 'created_at', 'author']
         extra_kwargs = {'author' : {'read_only':True}} # only read who author is
